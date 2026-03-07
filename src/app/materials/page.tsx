@@ -139,9 +139,9 @@ export default function MaterialsPage() {
     progress.completedExercises + completedMaterials.length;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-slate-50">
       {/* Header - Mobile Optimized */}
-      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+      <header className="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
           <div className="space-y-3 sm:space-y-0 sm:flex sm:items-center sm:justify-between">
             {/* Main content row */}
@@ -150,7 +150,7 @@ export default function MaterialsPage() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-1 px-3 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium shadow-md text-sm"
+                  className="flex items-center gap-1 px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors font-medium shadow-sm text-sm"
                 >
                   <ArrowLeft className="h-4 w-4" />
                   <span className="hidden xs:inline">Home</span>
@@ -159,7 +159,7 @@ export default function MaterialsPage() {
 
               <div className="min-w-0 flex-1">
                 <h1 className="text-base sm:text-xl lg:text-2xl font-bold text-gray-900 flex items-center gap-1 sm:gap-2">
-                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 flex-shrink-0" />
+                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-600 flex-shrink-0" />
                   <span className="truncate">
                     <span className="hidden sm:inline">
                       Materi Pembelajaran{" "}
@@ -203,7 +203,7 @@ export default function MaterialsPage() {
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-1 px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors font-medium shadow-md text-sm"
+                  className="flex items-center gap-1 px-3 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors font-medium shadow-sm text-sm"
                 >
                   <Clock className="h-4 w-4" />
                   <span className="hidden xs:inline">Riwayat</span>
@@ -219,21 +219,21 @@ export default function MaterialsPage() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="bg-white rounded-xl shadow-lg p-4 sm:p-6 mb-6 sm:mb-8"
+          className="bg-white rounded-xl shadow-sm border border-slate-200 p-4 sm:p-6 mb-6 sm:mb-8"
         >
           <div className="flex items-center justify-between mb-4">
             <h2 className="text-xl font-semibold text-gray-900 flex items-center gap-2">
               <Trophy className="h-5 w-5 text-yellow-500" />
               Progress Belajar
             </h2>
-            <span className="text-2xl font-bold text-blue-600">
+            <span className="text-2xl font-bold text-indigo-600">
               {progress.completedExercises}/{progress.totalExercises}
             </span>
           </div>
 
           <div className="w-full bg-gray-200 rounded-full h-3 mb-4">
             <motion.div
-              className="bg-gradient-to-r from-blue-500 to-purple-600 h-3 rounded-full"
+              className="bg-indigo-600 h-3 rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${progress.percentage}%` }}
               transition={{ duration: 1, ease: "easeOut" }}
@@ -241,20 +241,20 @@ export default function MaterialsPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-            <div className="text-center p-3 bg-blue-50 rounded-lg">
-              <div className="text-2xl font-bold text-blue-600">
+            <div className="text-center p-3 bg-indigo-50 rounded-lg">
+              <div className="text-2xl font-bold text-indigo-600">
                 {progress.totalXP}
               </div>
               <div className="text-sm text-gray-600">Total XP</div>
             </div>
-            <div className="text-center p-3 bg-green-50 rounded-lg">
-              <div className="text-2xl font-bold text-green-600">
+            <div className="text-center p-3 bg-slate-50 rounded-lg">
+              <div className="text-2xl font-bold text-slate-900">
                 {progress.level}
               </div>
               <div className="text-sm text-gray-600">Level</div>
             </div>
-            <div className="text-center p-3 bg-purple-50 rounded-lg">
-              <div className="text-2xl font-bold text-purple-600">
+            <div className="text-center p-3 bg-slate-50 rounded-lg">
+              <div className="text-2xl font-bold text-slate-900">
                 {progress.percentage.toFixed(0)}%
               </div>
               <div className="text-sm text-gray-600">Latihan Selesai</div>
@@ -281,7 +281,7 @@ export default function MaterialsPage() {
                 onClick={() => setActiveSection("materials")}
                 className={`flex-1 sm:flex-none px-3 sm:px-8 py-2.5 sm:py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 text-sm sm:text-base min-w-0 ${
                   activeSection === "materials"
-                    ? "bg-blue-600 text-white shadow-lg transform scale-[1.02] sm:scale-105"
+                    ? "bg-indigo-600 text-white shadow-sm transform scale-[1.02] sm:scale-105"
                     : "text-gray-600 hover:text-gray-800 hover:bg-white/50"
                 }`}
               >
@@ -294,7 +294,7 @@ export default function MaterialsPage() {
                 onClick={() => setActiveSection("exercises")}
                 className={`flex-1 sm:flex-none px-3 sm:px-8 py-2.5 sm:py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center gap-1.5 sm:gap-2 text-sm sm:text-base min-w-0 ${
                   activeSection === "exercises"
-                    ? "bg-blue-600 text-white shadow-lg transform scale-[1.02] sm:scale-105"
+                    ? "bg-indigo-600 text-white shadow-sm transform scale-[1.02] sm:scale-105"
                     : "text-gray-600 hover:text-gray-800 hover:bg-white/50"
                 }`}
               >
@@ -312,24 +312,22 @@ export default function MaterialsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className="bg-white rounded-3xl shadow-xl border border-gray-100 p-6 sm:p-8 lg:p-10 mb-8 overflow-hidden relative"
+          className="bg-white rounded-3xl shadow-sm border border-slate-200 p-6 sm:p-8 lg:p-10 mb-8 overflow-hidden relative"
         >
           {/* Background Pattern */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50"></div>
-          <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-100/20 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-          <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-purple-100/20 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
+          <div className="absolute inset-0 bg-slate-50/50"></div>
 
           {/* Header */}
           <div className="relative z-10 flex flex-col sm:flex-row sm:items-center sm:justify-between mb-8 gap-4">
             <div className="flex items-center gap-3">
               <div className="relative">
-                <div className="bg-gradient-to-r from-blue-500 to-purple-600 p-3 rounded-2xl shadow-lg">
+                <div className="bg-indigo-600 p-3 rounded-2xl shadow-sm">
                   <Filter className="h-6 w-6 text-white" />
                 </div>
                 <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-400 rounded-full border-2 border-white"></div>
               </div>
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900">
                   Filter & Pencarian
                 </h3>
                 <p className="text-sm text-gray-500 mt-1">
@@ -341,7 +339,7 @@ export default function MaterialsPage() {
             </div>
 
             {/* Results Counter */}
-            <div className="flex items-center gap-2 bg-gradient-to-r from-blue-50 to-purple-50 px-4 py-2 rounded-full border border-blue-100">
+            <div className="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-full border border-slate-200">
               <span className="text-sm font-medium text-gray-700">
                 {
                   (activeSection === "materials"
@@ -362,7 +360,7 @@ export default function MaterialsPage() {
                   Kategori
                 </label>
               </div>
-              <div className="h-px bg-gradient-to-r from-gray-200 to-transparent flex-1"></div>
+              <div className="h-px bg-slate-200 flex-1"></div>
             </div>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-2 sm:gap-3">
@@ -376,8 +374,6 @@ export default function MaterialsPage() {
                   whileHover={{
                     scale: 1.03,
                     y: -2,
-                    boxShadow:
-                      "0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                   }}
                   whileTap={{ scale: 0.97 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -385,15 +381,15 @@ export default function MaterialsPage() {
                   transition={{ delay: index * 0.05, duration: 0.3 }}
                   className={`group relative px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl sm:rounded-2xl text-xs sm:text-sm font-semibold transition-all duration-300 ease-out overflow-hidden ${
                     selectedCategory === category
-                      ? "bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg"
-                      : "bg-white text-gray-700 hover:text-blue-600 border border-gray-200 hover:border-blue-300 shadow-sm hover:shadow-md"
+                      ? "bg-indigo-600 text-white shadow-sm"
+                      : "bg-white text-gray-700 hover:text-indigo-600 border border-gray-200 hover:border-indigo-200 shadow-sm hover:shadow-md"
                   }`}
                 >
                   {/* Active Background Animation */}
                   {selectedCategory === category && (
                     <motion.div
                       layoutId="categoryActiveBackground"
-                      className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-600"
+                      className="absolute inset-0 bg-indigo-600"
                       initial={false}
                       transition={{
                         type: "spring",
@@ -405,7 +401,7 @@ export default function MaterialsPage() {
 
                   {/* Hover Effect */}
                   <div
-                    className={`absolute inset-0 bg-gradient-to-r from-blue-50 to-purple-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+                    className={`absolute inset-0 bg-indigo-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
                       selectedCategory === category ? "hidden" : ""
                     }`}
                   ></div>
@@ -427,7 +423,7 @@ export default function MaterialsPage() {
                     Tingkat Kesulitan
                   </label>
                 </div>
-                <div className="h-px bg-gradient-to-r from-gray-200 to-transparent flex-1"></div>
+                <div className="h-px bg-slate-200 flex-1"></div>
               </div>
 
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
@@ -436,32 +432,32 @@ export default function MaterialsPage() {
                     value: "all",
                     label: "Semua Tingkat",
                     icon: "🎯",
-                    color: "from-slate-500 to-slate-600",
-                    hoverColor: "from-slate-50 to-slate-100",
+                    color: "from-indigo-600 to-indigo-600",
+                    hoverColor: "from-indigo-50 to-indigo-50",
                     description: "Tampilkan semua level",
                   },
                   {
                     value: "beginner",
                     label: "Pemula",
                     icon: "🌱",
-                    color: "from-green-500 to-emerald-600",
-                    hoverColor: "from-green-50 to-emerald-50",
+                    color: "from-emerald-600 to-emerald-600",
+                    hoverColor: "from-emerald-50 to-emerald-50",
                     description: "Dasar & mudah dipahami",
                   },
                   {
                     value: "intermediate",
                     label: "Menengah",
                     icon: "⚡",
-                    color: "from-yellow-500 to-orange-500",
-                    hoverColor: "from-yellow-50 to-orange-50",
+                    color: "from-amber-600 to-amber-600",
+                    hoverColor: "from-amber-50 to-amber-50",
                     description: "Tantangan sedang",
                   },
                   {
                     value: "advanced",
                     label: "Lanjutan",
                     icon: "🚀",
-                    color: "from-red-500 to-pink-600",
-                    hoverColor: "from-red-50 to-pink-50",
+                    color: "from-rose-600 to-rose-600",
+                    hoverColor: "from-rose-50 to-rose-50",
                     description: "Kompleks & menantang",
                   },
                 ].map((difficulty, index) => (
@@ -471,8 +467,6 @@ export default function MaterialsPage() {
                     whileHover={{
                       scale: 1.03,
                       y: -3,
-                      boxShadow:
-                        "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
                     }}
                     whileTap={{ scale: 0.97 }}
                     initial={{ opacity: 0, y: 20 }}

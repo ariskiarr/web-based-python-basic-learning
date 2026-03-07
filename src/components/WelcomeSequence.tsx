@@ -60,10 +60,10 @@ export default function WelcomeSequence({
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3 }}
-            className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 text-center relative overflow-hidden"
+            className="bg-white rounded-2xl shadow-sm border border-slate-200 max-w-md w-full p-6 text-center relative overflow-hidden"
           >
             {/* Background gradient */}
-            <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 opacity-50" />
+            <div className="absolute inset-0 bg-slate-50/60" />
 
             <div className="relative z-10">
               {/* GIF Image */}
@@ -117,7 +117,7 @@ export default function WelcomeSequence({
                     key={index}
                     className={`w-2 h-2 rounded-full transition-colors duration-300 ${
                       index === currentStep
-                        ? "bg-blue-500"
+                        ? "bg-indigo-600"
                         : index < currentStep
                         ? "bg-green-500"
                         : "bg-gray-300"
@@ -132,7 +132,7 @@ export default function WelcomeSequence({
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
                 onClick={handleNext}
-                className="bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-3 rounded-xl font-semibold hover:from-blue-600 hover:to-purple-700 transform hover:scale-105 transition-all duration-200 shadow-lg"
+                className="bg-indigo-600 text-white px-8 py-3 rounded-xl font-semibold hover:bg-indigo-700 transform hover:scale-105 transition-all duration-200 shadow-sm"
               >
                 {currentPopup.buttonText}
               </motion.button>

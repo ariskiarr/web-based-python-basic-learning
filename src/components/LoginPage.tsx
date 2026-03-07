@@ -40,12 +40,12 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="bg-white/10 backdrop-blur-lg rounded-2xl p-8 w-full max-w-md border border-white/20 shadow-2xl"
+        className="bg-white rounded-2xl p-8 w-full max-w-md border border-slate-200 shadow-sm"
       >
         <motion.div
           initial={{ scale: 0 }}
@@ -53,13 +53,13 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
           transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
           className="text-center mb-8"
         >
-          <div className="bg-gradient-to-r from-blue-400 to-purple-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-            <Lock className="text-white text-2xl" />
+          <div className="bg-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+            <Lock className="text-white w-7 h-7" />
           </div>
-          <h1 className="text-3xl font-bold text-white mb-2">
+          <h1 className="text-3xl font-bold text-slate-900 mb-2">
             Python Learning
           </h1>
-          <p className="text-white/70">
+          <p className="text-slate-600">
             Masukkan kredensial untuk mengakses sistem pembelajaran
           </p>
         </motion.div>
@@ -70,16 +70,16 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <label className="block text-white/80 text-sm font-medium mb-2">
+            <label className="block text-slate-700 text-sm font-medium mb-2">
               Username
             </label>
             <div className="relative">
-              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
+              <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
               <input
                 type="text"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-4 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
+                className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-4 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400"
                 placeholder="Masukkan username"
                 required
               />
@@ -91,23 +91,23 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
             animate={{ x: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            <label className="block text-white/80 text-sm font-medium mb-2">
+            <label className="block text-slate-700 text-sm font-medium mb-2">
               Password
             </label>
             <div className="relative">
-              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-white/50 w-5 h-5" />
+              <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-slate-400 w-5 h-5" />
               <input
                 type={showPassword ? "text" : "password"}
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-white/10 border border-white/20 rounded-lg pl-10 pr-12 py-3 text-white placeholder-white/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent backdrop-blur-sm"
+                className="w-full bg-white border border-slate-300 rounded-lg pl-10 pr-12 py-3 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-400"
                 placeholder="Masukkan password"
                 required
               />
               <button
                 type="button"
                 onClick={() => setShowPassword(!showPassword)}
-                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white/50 hover:text-white/70"
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 text-slate-400 hover:text-slate-600"
               >
                 {showPassword ? (
                   <EyeOff className="w-5 h-5" />
@@ -122,7 +122,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-red-500/20 border border-red-500/30 rounded-lg p-3 text-red-200 text-sm text-center"
+              className="bg-rose-50 border border-rose-200 rounded-lg p-3 text-rose-700 text-sm text-center"
             >
               {error}
             </motion.div>
@@ -134,7 +134,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
             transition={{ delay: 0.5 }}
             type="submit"
             disabled={isLoading}
-            className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 disabled:from-gray-400 disabled:to-gray-500 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:hover:scale-100"
+            className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:bg-slate-300 text-white font-medium py-3 px-4 rounded-lg transition-all duration-200 transform hover:scale-[1.02] active:scale-[0.98] disabled:hover:scale-100"
           >
             {isLoading ? (
               <div className="flex items-center justify-center space-x-2">
@@ -153,7 +153,7 @@ export default function LoginPage({ onLoginSuccess }: LoginPageProps) {
           transition={{ delay: 0.6 }}
           className="mt-6 text-center"
         >
-          <p className="text-white/50 text-xs">
+          <p className="text-slate-500 text-xs">
             © 2025 Python Learning Platform
           </p>
         </motion.div>

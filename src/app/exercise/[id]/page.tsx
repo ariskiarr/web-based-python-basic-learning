@@ -194,12 +194,12 @@ sys.stderr = StringIO()
 
   if (!exercise) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center">
+      <div className="min-h-screen bg-slate-50 flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">
             Exercise Not Found
           </h1>
-          <Link href="/" className="text-blue-600 hover:text-blue-800">
+          <Link href="/" className="text-indigo-600 hover:text-indigo-800">
             ← Back to Home
           </Link>
         </div>
@@ -208,9 +208,9 @@ sys.stderr = StringIO()
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+    <div className="min-h-screen bg-slate-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b">
+      <header className="bg-white shadow-sm border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 sm:gap-4 min-w-0 flex-1">
@@ -218,7 +218,7 @@ sys.stderr = StringIO()
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-colors font-medium shadow-md text-sm sm:text-base"
+                  className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg transition-colors font-medium shadow-sm text-sm sm:text-base"
                 >
                   <ArrowLeft className="h-3 w-3 sm:h-4 sm:w-4" />
                   <span className="hidden xs:inline">Kembali</span>
@@ -227,7 +227,7 @@ sys.stderr = StringIO()
 
               <div className="min-w-0 flex-1">
                 <h1 className="text-lg sm:text-xl font-bold text-gray-900 flex items-center gap-2 sm:gap-3">
-                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 flex-shrink-0" />
+                  <BookOpen className="h-5 w-5 sm:h-6 sm:w-6 text-indigo-600 flex-shrink-0" />
                   <span className="truncate">{exercise.title}</span>
                 </h1>
                 <div className="flex flex-wrap items-center gap-1 sm:gap-2 mt-1">
@@ -241,7 +241,7 @@ sys.stderr = StringIO()
                   >
                     {getDifficultyText(exercise.difficulty)}
                   </span>
-                  <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
+                  <span className="px-2 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-medium">
                     {exercise.category}
                   </span>
                 </div>

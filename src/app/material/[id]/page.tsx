@@ -538,13 +538,13 @@ export default function MaterialPage() {
                             onClick={() =>
                               router.push(`/exercise/${exercise.id}`)
                             }
-                            className="w-full text-left p-4 bg-gradient-to-r from-blue-50 to-purple-50 border border-blue-100 hover:from-blue-100 hover:to-purple-100 rounded-xl transition-all duration-200 group"
+                            className="w-full text-left p-4 bg-slate-50 border border-slate-200 hover:bg-slate-100 rounded-xl transition-colors duration-200 group"
                           >
                             <div className="flex items-center justify-between">
                               <div className="min-w-0 flex-1">
                                 <div className="flex items-center space-x-2 mb-2">
-                                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                                  <h4 className="font-semibold text-gray-900 group-hover:text-blue-700 text-sm truncate">
+                                  <div className="w-2 h-2 bg-indigo-500 rounded-full"></div>
+                                  <h4 className="font-semibold text-gray-900 group-hover:text-indigo-700 text-sm truncate">
                                     {exercise.title}
                                   </h4>
                                 </div>
@@ -552,7 +552,7 @@ export default function MaterialPage() {
                                   Level: {exercise.difficulty}
                                 </p>
                               </div>
-                              <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-blue-600 flex-shrink-0" />
+                              <ChevronRight className="w-5 h-5 text-gray-400 group-hover:text-indigo-600 flex-shrink-0" />
                             </div>
                           </button>
                         ))}
@@ -573,7 +573,7 @@ export default function MaterialPage() {
             className="bg-white rounded-xl sm:rounded-2xl shadow-sm border border-gray-200 overflow-hidden"
           >
             {/* Article Header */}
-            <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white p-4 sm:p-6 lg:p-8">
+            <header className="bg-slate-900 text-white p-4 sm:p-6 lg:p-8">
               <div className="flex items-start justify-between">
                 <div className="flex-1 min-w-0">
                   <div className="inline-flex items-center px-2.5 sm:px-3 py-1 bg-white/20 rounded-full text-xs sm:text-sm font-medium mb-3 sm:mb-4">
@@ -583,7 +583,7 @@ export default function MaterialPage() {
                   <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 leading-tight">
                     {material.title}
                   </h1>
-                  <p className="text-blue-100 text-sm sm:text-base lg:text-lg leading-relaxed">
+                  <p className="text-slate-200 text-sm sm:text-base lg:text-lg leading-relaxed">
                     {material.description}
                   </p>
                 </div>
@@ -651,7 +651,7 @@ export default function MaterialPage() {
                 {!isCompleted ? (
                   <button
                     onClick={markAsCompleted}
-                    className="flex-1 bg-blue-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 text-sm sm:text-base"
+                    className="flex-1 bg-indigo-600 text-white py-3 sm:py-4 px-4 sm:px-6 rounded-lg sm:rounded-xl font-semibold hover:bg-indigo-700 transition-colors flex items-center justify-center space-x-2 text-sm sm:text-base"
                   >
                     <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
                     <span>Mark as Completed</span>

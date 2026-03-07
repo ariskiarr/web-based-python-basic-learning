@@ -54,7 +54,7 @@ export default function HistoryComponent() {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        className="bg-white rounded-xl shadow-lg p-4 sm:p-6"
+        className="bg-white rounded-xl shadow-sm border border-slate-200 p-4 sm:p-6"
       >
         <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
           <Trophy className="h-4 w-4 sm:h-5 sm:w-5 text-yellow-500" />
@@ -62,8 +62,8 @@ export default function HistoryComponent() {
         </h2>
 
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
-          <div className="text-center p-3 bg-blue-50 rounded-lg">
-            <div className="text-xl sm:text-2xl font-bold text-blue-600">
+          <div className="text-center p-3 bg-indigo-50 rounded-lg">
+            <div className="text-xl sm:text-2xl font-bold text-indigo-600">
               {progress.completedExercises}
             </div>
             <div className="text-xs sm:text-sm text-gray-600">
@@ -76,14 +76,14 @@ export default function HistoryComponent() {
             </div>
             <div className="text-xs sm:text-sm text-gray-600">Total XP</div>
           </div>
-          <div className="text-center p-3 bg-purple-50 rounded-lg">
-            <div className="text-xl sm:text-2xl font-bold text-purple-600">
+          <div className="text-center p-3 bg-slate-50 rounded-lg">
+            <div className="text-xl sm:text-2xl font-bold text-slate-900">
               {progress.level}
             </div>
             <div className="text-xs sm:text-sm text-gray-600">Level</div>
           </div>
-          <div className="text-center p-3 bg-orange-50 rounded-lg">
-            <div className="text-xl sm:text-2xl font-bold text-orange-600">
+          <div className="text-center p-3 bg-amber-50 rounded-lg">
+            <div className="text-xl sm:text-2xl font-bold text-amber-700">
               {progress.percentage.toFixed(0)}%
             </div>
             <div className="text-xs sm:text-sm text-gray-600">Progress</div>
@@ -96,10 +96,10 @@ export default function HistoryComponent() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
-        className="bg-white rounded-xl shadow-lg p-4 sm:p-6"
+        className="bg-white rounded-xl shadow-sm border border-slate-200 p-4 sm:p-6"
       >
         <h2 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3 sm:mb-4 flex items-center gap-2">
-          <History className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
+          <History className="h-4 w-4 sm:h-5 sm:w-5 text-indigo-600" />
           Riwayat Latihan
         </h2>
 

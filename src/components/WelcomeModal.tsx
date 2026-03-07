@@ -18,11 +18,11 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.8, y: 20 }}
             transition={{ duration: 0.3, ease: "easeOut" }}
-            className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 relative overflow-hidden"
+            className="bg-white rounded-2xl p-6 sm:p-8 max-w-md w-full mx-4 relative overflow-hidden shadow-sm border border-slate-200"
           >
             {/* Background decoration */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-blue-100/50 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-purple-100/50 to-transparent rounded-full translate-y-12 -translate-x-12"></div>
+            <div className="absolute top-0 right-0 w-32 h-32 bg-slate-100/60 rounded-full -translate-y-16 translate-x-16"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-slate-100/60 rounded-full translate-y-12 -translate-x-12"></div>
 
             {/* Close button */}
             <button
@@ -44,7 +44,7 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
                   type: "spring",
                   bounce: 0.5,
                 }}
-                className="w-20 h-20 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6"
+                className="w-20 h-20 bg-indigo-600 rounded-full flex items-center justify-center mx-auto mb-6"
               >
                 <Sparkles className="w-10 h-10 text-white" />
               </motion.div>
@@ -67,7 +67,7 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
                 className="text-gray-600 mb-6 leading-relaxed"
               >
                 Selamat datang di{" "}
-                <span className="font-semibold text-blue-600">
+                <span className="font-semibold text-indigo-600">
                   Python Learning Interactive
                 </span>
                 ! Platform pembelajaran Python yang mudah dan menyenangkan untuk
@@ -115,7 +115,7 @@ export default function WelcomeModal({ isOpen, onClose }: WelcomeModalProps) {
                 onClick={onClose}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="w-full bg-indigo-600 text-white py-3 px-6 rounded-lg font-semibold hover:bg-indigo-700 transition-all duration-200 shadow-sm hover:shadow-md"
               >
                 Mulai Belajar Sekarang!
               </motion.button>
