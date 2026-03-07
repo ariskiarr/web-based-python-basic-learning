@@ -33,8 +33,7 @@ export default function WelcomeSequence({
     {
       gif: "/gifs/dada.gif",
       title: "Semangat! 💪",
-      message:
-        "Semangat yahh belajarnya! 🎓",
+      message: "Semangat yahh belajarnya! 🎓",
       buttonText: "Selesai",
     },
   ];
@@ -119,8 +118,8 @@ export default function WelcomeSequence({
                       index === currentStep
                         ? "bg-indigo-600"
                         : index < currentStep
-                        ? "bg-green-500"
-                        : "bg-gray-300"
+                          ? "bg-green-500"
+                          : "bg-gray-300"
                     }`}
                   />
                 ))}

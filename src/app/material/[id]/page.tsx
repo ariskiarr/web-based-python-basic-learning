@@ -66,7 +66,7 @@ export default function MaterialPage() {
   // Get related exercises
   const relatedExercises = material
     ? exercises.filter((exercise) =>
-        material.relatedExercises.includes(exercise.id)
+        material.relatedExercises.includes(exercise.id),
       )
     : [];
 
@@ -97,7 +97,7 @@ export default function MaterialPage() {
   const formatTextWithMarkdown = (text: string) => {
     // Simple approach: find and replace patterns one by one
     const processText = (
-      inputText: string
+      inputText: string,
     ): (string | React.ReactElement)[] => {
       const result: (string | React.ReactElement)[] = [];
       let remaining = inputText;
@@ -119,12 +119,12 @@ export default function MaterialPage() {
               className="font-bold text-gray-900"
             >
               {boldMatch[1]}
-            </strong>
+            </strong>,
           );
 
           // Continue with remaining text
           remaining = remaining.substring(
-            boldMatch.index + boldMatch[0].length
+            boldMatch.index + boldMatch[0].length,
           );
           continue;
         }
@@ -144,12 +144,12 @@ export default function MaterialPage() {
               className="bg-gray-100 text-gray-800 px-2 py-1 rounded text-sm font-mono"
             >
               {codeMatch[1]}
-            </code>
+            </code>,
           );
 
           // Continue with remaining text
           remaining = remaining.substring(
-            codeMatch.index + codeMatch[0].length
+            codeMatch.index + codeMatch[0].length,
           );
           continue;
         }
@@ -175,7 +175,7 @@ export default function MaterialPage() {
 
     const calculatedHeight = Math.max(
       minHeight,
-      Math.min(maxHeight, lines * lineHeight + padding)
+      Math.min(maxHeight, lines * lineHeight + padding),
     );
     return calculatedHeight;
   };
@@ -238,7 +238,7 @@ export default function MaterialPage() {
                 />
               </div>
             </div>
-          </div>
+          </div>,
         );
         i++; // Skip the closing ```
         continue;
@@ -252,7 +252,7 @@ export default function MaterialPage() {
             className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4 sm:mb-6 mt-6 sm:mt-8 first:mt-0"
           >
             {formatTextWithMarkdown(line.slice(2))}
-          </h1>
+          </h1>,
         );
       } else if (line.startsWith("## ")) {
         result.push(
@@ -261,7 +261,7 @@ export default function MaterialPage() {
             className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4 mt-5 sm:mt-6"
           >
             {formatTextWithMarkdown(line.slice(3))}
-          </h2>
+          </h2>,
         );
       } else if (line.startsWith("### ")) {
         result.push(
@@ -270,7 +270,7 @@ export default function MaterialPage() {
             className="text-lg sm:text-xl font-semibold text-gray-800 mb-2 sm:mb-3 mt-4 sm:mt-5"
           >
             {formatTextWithMarkdown(line.slice(4))}
-          </h3>
+          </h3>,
         );
       } else if (line.startsWith("- ")) {
         // Handle bullet points
@@ -280,7 +280,7 @@ export default function MaterialPage() {
             className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2 ml-4 list-disc"
           >
             {formatTextWithMarkdown(line.slice(2))}
-          </li>
+          </li>,
         );
       } else if (/^\d+\./.test(line.trim())) {
         // Handle numbered lists
@@ -290,12 +290,12 @@ export default function MaterialPage() {
             className="text-sm sm:text-base text-gray-700 leading-relaxed mb-2 ml-4 list-decimal"
           >
             {formatTextWithMarkdown(line.replace(/^\d+\.\s*/, ""))}
-          </li>
+          </li>,
         );
       } else if (line.trim().startsWith("<img")) {
         // Handle img tags
         const imgMatch = line.match(
-          /<img\s+src="([^"]+)"\s+alt="([^"]*)"[^>]*>/
+          /<img\s+src="([^"]+)"\s+alt="([^"]*)"[^>]*>/,
         );
         if (imgMatch) {
           result.push(
@@ -307,7 +307,7 @@ export default function MaterialPage() {
                 height={400}
                 className="max-w-full h-auto mx-auto rounded-lg shadow-md"
               />
-            </div>
+            </div>,
           );
         }
       } else if (line.trim()) {
@@ -318,7 +318,7 @@ export default function MaterialPage() {
             className="text-sm sm:text-base text-gray-700 leading-relaxed mb-3 sm:mb-4"
           >
             {formatTextWithMarkdown(line)}
-          </p>
+          </p>,
         );
       } else {
         // Empty lines
@@ -611,7 +611,7 @@ export default function MaterialPage() {
                       className="px-4"
                       style={{
                         height: `${calculateEditorHeight(
-                          material.codeExample
+                          material.codeExample,
                         )}px`,
                       }}
                     >

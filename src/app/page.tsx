@@ -153,10 +153,7 @@ export default function HomePage() {
         >
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6 px-4">
             Belajar Python dengan
-            <span className="text-indigo-700">
-              {" "}
-              Interaktif
-            </span>
+            <span className="text-indigo-700"> Interaktif</span>
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto px-4">
             Platform pembelajaran Python yang memungkinkan kamu menulis,

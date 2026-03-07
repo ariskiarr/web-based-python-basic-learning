@@ -134,7 +134,7 @@ sys.stderr = StringIO()
           userCode,
           stdout || stderr,
           isCorrect,
-          exercise.points
+          exercise.points,
         );
 
         // Update status
@@ -236,7 +236,7 @@ sys.stderr = StringIO()
                   </span>
                   <span
                     className={`px-2 py-1 rounded-full text-xs font-medium ${getDifficultyColor(
-                      exercise.difficulty
+                      exercise.difficulty,
                     )}`}
                   >
                     {getDifficultyText(exercise.difficulty)}

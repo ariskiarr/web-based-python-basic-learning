@@ -187,7 +187,7 @@ export default function HistoryComponent() {
                     <pre className="whitespace-pre-wrap">
                       {formatCode(
                         attempt.code,
-                        window.innerWidth < 640 ? 50 : 100
+                        window.innerWidth < 640 ? 50 : 100,
                       )}
                     </pre>
                   </div>

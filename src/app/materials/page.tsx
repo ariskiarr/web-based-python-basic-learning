@@ -24,7 +24,7 @@ import {
 
 export default function MaterialsPage() {
   const [activeSection, setActiveSection] = useState<"materials" | "exercises">(
-    "materials"
+    "materials",
   );
   const [selectedCategory, setSelectedCategory] = useState("Semua");
   const [selectedDifficulty, setSelectedDifficulty] = useState<string>("all");
@@ -80,7 +80,7 @@ export default function MaterialsPage() {
     > = {};
     exercises.forEach((exercise) => {
       statuses[exercise.id] = userProgressManager.getExerciseStatus(
-        exercise.id
+        exercise.id,
       );
     });
     setExerciseStatuses(statuses);
@@ -697,8 +697,8 @@ export default function MaterialsPage() {
                             !isAccessible
                               ? "bg-gray-200 text-gray-500 cursor-not-allowed"
                               : isCompleted
-                              ? "bg-green-100 text-green-700 hover:bg-green-200"
-                              : "bg-blue-600 text-white hover:bg-blue-700"
+                                ? "bg-green-100 text-green-700 hover:bg-green-200"
+                                : "bg-blue-600 text-white hover:bg-blue-700"
                           }`}
                         >
                           <Book className="h-4 w-4" />
@@ -706,8 +706,8 @@ export default function MaterialsPage() {
                             {!isAccessible
                               ? "Segera Hadir"
                               : isCompleted
-                              ? "Baca Ulang"
-                              : "Pelajari"}
+                                ? "Baca Ulang"
+                                : "Pelajari"}
                           </span>
                           {isAccessible && <ChevronRight className="h-4 w-4" />}
                         </motion.button>
@@ -870,8 +870,8 @@ export default function MaterialsPage() {
                             !isAccessible
                               ? "bg-gray-200 text-gray-500 cursor-not-allowed"
                               : status.completed
-                              ? "bg-green-100 text-green-700 hover:bg-green-200"
-                              : "bg-blue-600 text-white hover:bg-blue-700"
+                                ? "bg-green-100 text-green-700 hover:bg-green-200"
+                                : "bg-blue-600 text-white hover:bg-blue-700"
                           }`}
                         >
                           <PlayCircle className="h-4 w-4" />
@@ -879,8 +879,8 @@ export default function MaterialsPage() {
                             {!isAccessible
                               ? "Segera Hadir"
                               : status.completed
-                              ? "Ulangi"
-                              : "Mulai Latihan"}
+                                ? "Ulangi"
+                                : "Mulai Latihan"}
                           </span>
                           {isAccessible && <ChevronRight className="h-4 w-4" />}
                         </motion.button>
