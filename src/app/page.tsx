@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { userProgressManager } from "@/utils/userProgress";
+import { preloadPyodide } from "@/utils/pyodide";
 import { useWelcomeModal } from "@/hooks/useWelcomeModal";
 import WelcomeModal from "@/components/WelcomeModal";
 import WelcomeSequence from "@/components/WelcomeSequence";
@@ -34,6 +35,9 @@ export default function HomePage() {
   useEffect(() => {
     const progressData = userProgressManager.getOverallProgress();
     setProgress(progressData);
+
+    // Warm up Pyodide early so the first exercise loads faster.
+    preloadPyodide();
   }, []);
 
   const features = [

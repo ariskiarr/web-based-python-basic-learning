@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { exercises } from "@/data/exercises";
 import { userProgressManager } from "@/utils/userProgress";
+import { getPyodide, type PyodideInstance } from "@/utils/pyodide";
 import CodeEditor from "@/components/CodeEditor";
 import {
   ArrowLeft,
@@ -20,17 +21,6 @@ import {
   RotateCcw,
 } from "lucide-react";
 
-interface PyodideWorker {
-  runPython: (code: string) => Promise<string>;
-  loadPackage: (packages: string[]) => Promise<void>;
-}
-
-declare global {
-  interface Window {
-    loadPyodide: () => Promise<PyodideWorker>;
-  }
-}
-
 export default function ExercisePage() {
   const params = useParams();
   const router = useRouter();
@@ -44,7 +34,7 @@ export default function ExercisePage() {
   const [showHints, setShowHints] = useState(false);
   const [showSolution, setShowSolution] = useState(false);
   const [hintIndex, setHintIndex] = useState(0);
-  const [pyodide, setPyodide] = useState<PyodideWorker | null>(null);
+  const [pyodide, setPyodide] = useState<PyodideInstance | null>(null);
   const [isLoadingPyodide, setIsLoadingPyodide] = useState(true);
   const [exerciseStatus, setExerciseStatus] = useState({
     completed: false,
@@ -67,22 +57,10 @@ export default function ExercisePage() {
     // Load Pyodide
     const initPyodide = async () => {
       try {
-        // Load Pyodide script if not already loaded
-        if (!window.loadPyodide) {
-          const script = document.createElement("script");
-          script.src =
-            "https://cdn.jsdelivr.net/pyodide/v0.24.1/full/pyodide.js";
-          script.onload = async () => {
-            const pyodideInstance = await window.loadPyodide();
-            setPyodide(pyodideInstance);
-            setIsLoadingPyodide(false);
-          };
-          document.head.appendChild(script);
-        } else {
-          const pyodideInstance = await window.loadPyodide();
-          setPyodide(pyodideInstance);
-          setIsLoadingPyodide(false);
-        }
+        setIsLoadingPyodide(true);
+        const pyodideInstance = await getPyodide();
+        setPyodide(pyodideInstance);
+        setIsLoadingPyodide(false);
       } catch (error) {
         console.error("Failed to load Pyodide:", error);
         setIsLoadingPyodide(false);
@@ -112,8 +90,8 @@ sys.stderr = StringIO()
       await pyodide.runPython(userCode);
 
       // Get output
-      const stdout = await pyodide.runPython("sys.stdout.getvalue()");
-      const stderr = await pyodide.runPython("sys.stderr.getvalue()");
+      const stdout = await pyodide.runPython<string>("sys.stdout.getvalue()");
+      const stderr = await pyodide.runPython<string>("sys.stderr.getvalue()");
 
       if (stderr) {
         setOutput(stderr);
